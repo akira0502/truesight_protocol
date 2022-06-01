@@ -1,0 +1,31 @@
+[package]
+name = "truesight_protocol"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "truesight_protocol"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[profile.release]
+overflow-checks = true
+
+[dependencies]
+anchor-lang = "0.24.2"
+anchor-spl = "0.24.2"
+spl-token = {version = "3.2.0", features = ["no-entrypoint"]}
+pyth-client = {version = "0.5.0", features = ["no-entrypoint"]}
+solana-program = " 1.8.14"
+
+[dev-dependencies]
+solana-program-test = " 1.8.14"
+solana-client = " 1.8.14"
+solana-sdk = " 1.8.14"
